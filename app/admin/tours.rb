@@ -1,4 +1,6 @@
 ActiveAdmin.register Tour do
+
+ permit_params :name, :starts_on, :ends_on, :user_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
