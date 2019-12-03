@@ -4,6 +4,8 @@ RSpec.describe Tour, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:locations) }
+
     it { should belong_to(:user) }
 
     end
