@@ -57,6 +57,14 @@ class ToursController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @tour = Tour.find(params.fetch("id_to_remove"))
+
+    @tour.destroy
+
+    redirect_to("/users/#{@tour.user_id}", notice: "Tour deleted successfully.")
+  end
+
   def destroy_row
     @tour = Tour.find(params.fetch("id_to_remove"))
 

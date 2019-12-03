@@ -63,6 +63,14 @@ class LocationsController < ApplicationController
     end
   end
 
+  def destroy_row_from_tour
+    @location = Location.find(params.fetch("id_to_remove"))
+
+    @location.destroy
+
+    redirect_to("/tours/#{@location.tour_id}", notice: "Location deleted successfully.")
+  end
+
   def destroy_row
     @location = Location.find(params.fetch("id_to_remove"))
 
