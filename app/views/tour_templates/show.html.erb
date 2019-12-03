@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Tour #<%= @tour.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/tours" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link tour start -->
+      <div class="col">
+        <a href="/tours/<%= @tour.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit tour
+        </a>
+      </div>
+      <!-- Edit link tour end -->
+
+      <!-- Delete link tour start -->
+      <div class="col">
+        <a href="/delete_tour/<%= @tour.id %>" class="btn btn-block btn-outline-secondary">
+          Delete tour
+        </a>
+      </div>
+      <!-- Delete link tour end -->
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @tour.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Starts on
+      </dt>
+      <!-- Display starts_on start -->
+      <dd>
+        <%= @tour.starts_on %>
+      </dd>
+      <!-- Display starts_on end -->
+
+      <dt>
+        Ends on
+      </dt>
+      <!-- Display ends_on start -->
+      <dd>
+        <%= @tour.ends_on %>
+      </dd>
+      <!-- Display ends_on end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @tour.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@tour.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@tour.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

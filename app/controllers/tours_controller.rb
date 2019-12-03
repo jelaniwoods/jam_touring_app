@@ -1,0 +1,67 @@
+class ToursController < ApplicationController
+  def index
+    @tours = Tour.all
+
+    render("tour_templates/index.html.erb")
+  end
+
+  def show
+    @tour = Tour.find(params.fetch("id_to_display"))
+
+    render("tour_templates/show.html.erb")
+  end
+
+  def new_form
+    @tour = Tour.new
+
+    render("tour_templates/new_form.html.erb")
+  end
+
+  def create_row
+    @tour = Tour.new
+
+    @tour.name = params.fetch("name")
+    @tour.starts_on = params.fetch("starts_on")
+    @tour.ends_on = params.fetch("ends_on")
+    @tour.user_id = params.fetch("user_id")
+
+    if @tour.valid?
+      @tour.save
+
+      redirect_back(:fallback_location => "/tours", :notice => "Tour created successfully.")
+    else
+      render("tour_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def edit_form
+    @tour = Tour.find(params.fetch("prefill_with_id"))
+
+    render("tour_templates/edit_form.html.erb")
+  end
+
+  def update_row
+    @tour = Tour.find(params.fetch("id_to_modify"))
+
+    @tour.name = params.fetch("name")
+    @tour.starts_on = params.fetch("starts_on")
+    @tour.ends_on = params.fetch("ends_on")
+    @tour.user_id = params.fetch("user_id")
+
+    if @tour.valid?
+      @tour.save
+
+      redirect_to("/tours/#{@tour.id}", :notice => "Tour updated successfully.")
+    else
+      render("tour_templates/edit_form_with_errors.html.erb")
+    end
+  end
+
+  def destroy_row
+    @tour = Tour.find(params.fetch("id_to_remove"))
+
+    @tour.destroy
+
+    redirect_to("/tours", :notice => "Tour deleted successfully.")
+  end
+end
