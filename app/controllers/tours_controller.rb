@@ -10,7 +10,8 @@ class ToursController < ApplicationController
   end
 
   def index
-    @tours = Tour.page(params[:page]).per(10)
+    @q = Tour.ransack(params[:q])
+    @tours = @q.result(:distinct => true).includes(:user, :locations).page(params[:page]).per(10)
 
     render("tour_templates/index.html.erb")
   end
