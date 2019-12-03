@@ -10,7 +10,7 @@ class ToursController < ApplicationController
   end
 
   def index
-    @tours = Tour.all
+    @tours = Tour.page(params[:page]).per(10)
 
     render("tour_templates/index.html.erb")
   end
