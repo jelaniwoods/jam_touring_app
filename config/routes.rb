@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "tours#index"
   # Routes for the Location resource:
 
   # CREATE
