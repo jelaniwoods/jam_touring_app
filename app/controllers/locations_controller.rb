@@ -37,6 +37,26 @@ class LocationsController < ApplicationController
     end
   end
 
+  def create_row_from_tour
+    @location = Location.new
+
+    @location.name = params.fetch("name")
+    @location.arrives_on = params.fetch("arrives_on")
+    @location.departs_on = params.fetch("departs_on")
+    @location.weather = params.fetch("weather")
+    @location.exchange_rate = params.fetch("exchange_rate")
+    @location.local_currency = params.fetch("local_currency")
+    @location.tour_id = params.fetch("tour_id")
+
+    if @location.valid?
+      @location.save
+
+      redirect_to("/tours/#{@location.tour_id}", notice: "Location created successfully.")
+    else
+      render("location_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @location = Location.find(params.fetch("prefill_with_id"))
 

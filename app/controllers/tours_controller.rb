@@ -6,6 +6,7 @@ class ToursController < ApplicationController
   end
 
   def show
+    @location = Location.new
     @tour = Tour.find(params.fetch("id_to_display"))
 
     render("tour_templates/show.html.erb")
