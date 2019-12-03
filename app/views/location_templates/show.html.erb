@@ -11,82 +11,65 @@
         </a>
       </div>
 
-      <!-- Edit link location start -->
       <div class="col">
         <a href="/locations/<%= @location.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit location
         </a>
       </div>
-      <!-- Edit link location end -->
 
-      <!-- Delete link location start -->
       <div class="col">
         <a href="/delete_location/<%= @location.id %>" class="btn btn-block btn-outline-secondary">
           Delete location
         </a>
       </div>
-      <!-- Delete link location end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @location.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Arrives on
       </dt>
-      <!-- Display arrives_on start -->
       <dd>
         <%= @location.arrives_on %>
       </dd>
-      <!-- Display arrives_on end -->
 
       <dt>
         Departs on
       </dt>
-      <!-- Display departs_on start -->
       <dd>
         <%= @location.departs_on %>
       </dd>
-      <!-- Display departs_on end -->
 
       <dt>
         Weather
       </dt>
-      <!-- Display weather start -->
       <dd>
         <%= @location.weather %>
       </dd>
-      <!-- Display weather end -->
 
       <dt>
         Exchange rate
       </dt>
-      <!-- Display exchange_rate start -->
       <dd>
         <%= @location.exchange_rate %>
       </dd>
-      <!-- Display exchange_rate end -->
 
       <dt>
         Local currency
       </dt>
-      <!-- Display local_currency start -->
       <dd>
         <%= @location.local_currency %>
       </dd>
-      <!-- Display local_currency end -->
 
       <dt>
         Tour
       </dt>
-      <!-- Display tour_id start -->
       <dd>
         <% if @location.tour.present? %>
           <a href="/tours/<%= @location.tour_id %>">
@@ -94,28 +77,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display tour_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@location.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@location.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

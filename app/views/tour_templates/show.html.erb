@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link tour start -->
       <div class="col">
         <% if current_user == @tour.user %>
           <a href="/tours/<%= @tour.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link tour end -->
 
-      <!-- Delete link tour start -->
       <div class="col">
         <% if current_user == @tour.user %>
           <a href="/delete_tour/<%= @tour.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,41 +26,33 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link tour end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @tour.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Starts on
       </dt>
-      <!-- Display starts_on start -->
       <dd>
         <%= @tour.starts_on %>
       </dd>
-      <!-- Display starts_on end -->
 
       <dt>
         Ends on
       </dt>
-      <!-- Display ends_on start -->
       <dd>
         <%= @tour.ends_on %>
       </dd>
-      <!-- Display ends_on end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @tour.user.present? %>
           <a href="/users/<%= @tour.user_id %>">
@@ -71,33 +60,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@tour.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@tour.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "tour_templates/tour_locations" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

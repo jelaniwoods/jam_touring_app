@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "location_templates/locations_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -74,49 +70,34 @@
 
       <% @locations.each do |location| %>
       <tr>
-        <!-- Display location.id start -->
         <td>
           <%= location.id %>
         </td>
-        <!-- Display location.id end -->
 
-        <!-- Display location.name start -->
         <td>
           <%= location.name %>
         </td>
-        <!-- Display location.name end -->
 
-        <!-- Display location.arrives_on start -->
         <td>
           <%= location.arrives_on %>
         </td>
-        <!-- Display location.arrives_on end -->
 
-        <!-- Display location.departs_on start -->
         <td>
           <%= location.departs_on %>
         </td>
-        <!-- Display location.departs_on end -->
 
-        <!-- Display location.weather start -->
         <td>
           <%= location.weather %>
         </td>
-        <!-- Display location.weather end -->
 
-        <!-- Display location.exchange_rate start -->
         <td>
           <%= location.exchange_rate %>
         </td>
-        <!-- Display location.exchange_rate end -->
 
-        <!-- Display location.local_currency start -->
         <td>
           <%= location.local_currency %>
         </td>
-        <!-- Display location.local_currency end -->
 
-        <!-- Display location.tour_id start -->
         <td>
           <% if location.tour.present? %>
             <a href="/tours/<%= location.tour.id %>">
@@ -124,19 +105,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display location.tour_id end -->
 
-        <!-- Display location.created_at start -->
         <td>
           <%= time_ago_in_words(location.created_at) %> ago
         </td>
-        <!-- Display location.created_at end -->
 
-        <!-- Display location.updated_at start -->
         <td>
           <%= time_ago_in_words(location.updated_at) %> ago
         </td>
-        <!-- Display location.updated_at end -->
 
         <td>
           <a href="/locations/<%= location.id %>">

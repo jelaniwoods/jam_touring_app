@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @location.errors.any? %>
   <% @location.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,93 +12,63 @@
 
 <hr>
 
-<!-- Form location start -->
 <form action="/update_location/<%= @location.id %>" method="post">
-<!-- Form location end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @location.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for arrives_on start -->
   <div class="form-group">
     <label for="arrives_on">
       Arrives on
     </label>
 
-    <!-- Input for arrives_on start -->
     <input type="text" id="arrives_on" name="arrives_on" class="form-control" value="<%= @location.arrives_on %>">
-    <!-- Input for arrives_on end -->
   </div>
-  <!-- Label and input for arrives_on end -->
 
-  <!-- Label and input for departs_on start -->
   <div class="form-group">
     <label for="departs_on">
       Departs on
     </label>
 
-    <!-- Input for departs_on start -->
     <input type="text" id="departs_on" name="departs_on" class="form-control" value="<%= @location.departs_on %>">
-    <!-- Input for departs_on end -->
   </div>
-  <!-- Label and input for departs_on end -->
 
-  <!-- Label and input for weather start -->
   <div class="form-group">
     <label for="weather">
       Weather
     </label>
 
-    <!-- Input for weather start -->
     <input type="text" id="weather" name="weather" class="form-control" value="<%= @location.weather %>">
-    <!-- Input for weather end -->
   </div>
-  <!-- Label and input for weather end -->
 
-  <!-- Label and input for exchange_rate start -->
   <div class="form-group">
     <label for="exchange_rate">
       Exchange rate
     </label>
 
-    <!-- Input for exchange_rate start -->
     <input type="text" id="exchange_rate" name="exchange_rate" class="form-control" value="<%= @location.exchange_rate %>">
-    <!-- Input for exchange_rate end -->
   </div>
-  <!-- Label and input for exchange_rate end -->
 
-  <!-- Label and input for local_currency start -->
   <div class="form-group">
     <label for="local_currency">
       Local currency
     </label>
 
-    <!-- Input for local_currency start -->
     <input type="text" id="local_currency" name="local_currency" class="form-control" value="<%= @location.local_currency %>">
-    <!-- Input for local_currency end -->
   </div>
-  <!-- Label and input for local_currency end -->
 
-  <!-- Label and input for tour_id start -->
   <div class="form-group">
     <label for="tour_id">
       Tour
     </label>
 
-    <!-- Input for tour_id start -->
     <%= select_tag(:tour_id, options_from_collection_for_select(Tour.all, :id, :name, @location.tour_id), :class => "form-control") %>
-    <!-- Input for tour_id end -->
   </div>
-  <!-- Label and input for tour_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update location
