@@ -47,7 +47,7 @@ class ToursController < ApplicationController
     @tour.name = params.fetch("name")
     @tour.starts_on = params.fetch("starts_on")
     @tour.ends_on = params.fetch("ends_on")
-    @tour.user_id = params.fetch("user_id")
+    
 
     if @tour.valid?
       @tour.save
