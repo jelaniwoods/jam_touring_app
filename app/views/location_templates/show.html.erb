@@ -88,7 +88,11 @@
       </dt>
       <!-- Display tour_id start -->
       <dd>
-        <%= @location.tour_id %>
+        <% if @location.tour.present? %>
+          <a href="/tours/<%= @location.tour_id %>">
+            <%= @location.tour.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display tour_id end -->
 

@@ -114,7 +114,11 @@
 
         <!-- Display location.tour_id start -->
         <td>
-          <%= location.tour.name %>
+          <% if location.tour.present? %>
+            <a href="/tours/<%= location.tour.id %>">
+              <%= location.tour.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display location.tour_id end -->
 

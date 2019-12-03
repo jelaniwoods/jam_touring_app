@@ -65,7 +65,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @tour.user_id %>
+        <% if @tour.user.present? %>
+          <a href="/users/<%= @tour.user_id %>">
+            <%= @tour.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
