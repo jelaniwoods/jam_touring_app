@@ -13,17 +13,21 @@
 
       <!-- Edit link tour start -->
       <div class="col">
-        <a href="/tours/<%= @tour.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit tour
-        </a>
+        <% if current_user == @tour.user %>
+          <a href="/tours/<%= @tour.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit tour
+          </a>
+        <% end %>
       </div>
       <!-- Edit link tour end -->
 
       <!-- Delete link tour start -->
       <div class="col">
-        <a href="/delete_tour/<%= @tour.id %>" class="btn btn-block btn-outline-secondary">
-          Delete tour
-        </a>
+        <% if current_user == @tour.user %>
+          <a href="/delete_tour/<%= @tour.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete tour
+          </a>
+        <% end %>
       </div>
       <!-- Delete link tour end -->
     </div>
